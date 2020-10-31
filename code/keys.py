@@ -2,8 +2,8 @@ from typing import Set
 
 from talon import Module, Context, actions
 import sys
-    
-default_alphabet = 'air bat cap drum each fine gust harp sit wheel kilo look made near circle pit quench red sun trap urge vest whale plex yank zip'.split(' ')
+
+default_alphabet = 'ask bat cap drum each fine gust harp sit yes cope look made near circle pit quench red sun trap urge vest whale plex yank zulu'.split(' ')
 letters_string = 'abcdefghijklmnopqrstuvwxyz'
 
 default_digits = 'zero one two three four five six seven eight nine'.split(' ')
@@ -71,6 +71,12 @@ ctx.lists['self.modifier'] = {
     'alt':     'alt',    'option':  'alt',
     'super':   'super',
 }
+ctx.settings['dictate.word_map'] = {
+    'i': 'I',
+    "i'm": "I'm",
+    "i've": "I've",
+    "i'd": "I'd",
+}
 
 ctx.lists['self.letter'] = dict(zip(default_alphabet, letters_string))
 ctx.lists['self.symbol'] = {
@@ -101,7 +107,7 @@ ctx.lists['self.symbol'] = {
     'star': '*', 'asterisk': '*',
     'pound': '#', 'hash': '#', 'hash sign': '#', 'number sign': '#',
     'percent': '%', 'percent sign': '%',
-    'caret': '^',
+    'exponent': '^',
     'at sign': '@',
     'and sign': '&', 'ampersand': '&', 'amper': '&',
     'pipe': '|',
@@ -121,7 +127,7 @@ simple_keys = [
     'home', 'pageup', 'pagedown', 'end',
 ]
 alternate_keys = {
-    'delete': 'backspace', 'junk': 'backspace',
+    'delete': 'backspace',
     'forward delete': 'delete',
 }
 keys = {k: k for k in simple_keys}

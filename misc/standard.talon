@@ -3,31 +3,39 @@ slap:
 	key(enter)
 M D five: "md5"
 (regex | rejex): "regex"
-args: 
+arguments: 
 	insert("()")
 	key(left)
 in string: 
 	insert("\"\"")
 	key(left)
-generics: 
+in generics | generics: 
 	insert("<>")
 	key(left)
-[inside] (index | array): 
+in (index | array | squares): 
 	insert("[]") 
 	key(left)
 self taught: "self."
-(dickt in it | inside bracket | in bracket): 
+(dickt in it | inside bracket | in bracket | in dictionary): 
 	insert("{}") 
 	key(left)
+(create | open) code block:
+	insert(" {}")
+	key(left)
+	key(enter)
 
-bytes: "bytes"
 funny: "heh"
 yeah: "yeah"
 four space: "    "
-tokyo: "Tokio"
-tokyos: "Tokio's"
-stream: "stream"
-streams: "streams"
+say bytes: "bytes"
+say tokyo: "Tokio"
+say tokyos: "Tokio's"
+say stream: "stream"
+say streams: "streams"
+say async: "async"
+say iter: "iter"
+say iter mut: "iter_mut"
+say into iter: "into_iter"
 
 insert today: insert(user.current_date())
 times <digits>: core.repeat_command(digits - 1)

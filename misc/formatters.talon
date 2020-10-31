@@ -1,4 +1,4 @@
 <user.format_text>$: insert(format_text)
-phrase <phrase>$: dictate.lower(phrase)
-(say | speak) <phrase>$: dictate.lower(phrase)
-word <word>: dictate.lower(word)
+phrase <phrase>$: dictate.natural(phrase)
+word <word>: dictate.natural(word)
+word next: insert("next")

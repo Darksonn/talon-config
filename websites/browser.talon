@@ -38,6 +38,11 @@ search tab slack$:
   sleep(50ms)
   key(% s l a c k)
 
+search tab$:
+  browser.focus_address()
+  sleep(50ms)
+  key(%)
+
 search tab <phrase>$:
   browser.focus_address()
   sleep(50ms)
@@ -81,3 +86,35 @@ link <phrase> enter:
   sleep(100ms)
   dictate.lower(phrase)
   key(enter)
+
+edit in whim:
+  key(ctrl-a ctrl-c)
+  sleep(50ms)
+  key(super-enter)
+  sleep(250ms)
+  key(super-w)
+  sleep(50ms)
+  key(n v i m enter)
+  sleep(50ms)
+  insert(":set colorcolumn=0")
+  key(enter)
+  insert(":set textwidth=0")
+  key(enter)
+  insert(":%!xclip -sel clip -o")
+  key(enter G $)
+
+edit in whim eighty:
+  key(ctrl-a ctrl-c)
+  sleep(50ms)
+  key(super-enter)
+  sleep(250ms)
+  key(super-w)
+  sleep(50ms)
+  key(n v i m enter)
+  sleep(50ms)
+  insert(":set colorcolumn=82")
+  key(enter)
+  insert(":set textwidth=80")
+  key(enter)
+  insert(":%!xclip -sel clip -o")
+  key(enter G $)
